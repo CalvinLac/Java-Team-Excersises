@@ -9,24 +9,37 @@ public class GuessingGame
 
     System.out.println("I'm thinking of a number between 0 and 9.");
     
-    int guess = 11;
+    String guess;
     Scanner keyboard = new Scanner(System.in);
 
-    while (guess != randomNumber) 
+    //infinite loop till the input is correct 
+    while (true) 
     {
-      System.out.print("What is your guess?");
-      guess = keyboard.nextInt();
-      if (guess == randomNumber) 
-      {
-        System.out.println("Correct!");
-      }
-      else if (guess > randomNumber)
-      {
-        System.out.println("Too high");
-      }
-      else
-      {
-        System.out.println("Too low");
+      System.out.print("What is your guess? ");
+
+      guess = keyboard.nextLine();
+
+      if (guess.length() == 1) {
+
+        if(Character.isDigit(guess)) {
+          int modifiedGuess =Character.getNumericValue(guess);
+          if (modifiedGuess == randomNumber) 
+          {
+            System.out.println("Correct!");
+            break;
+          }
+          else if (modifiedGuess > randomNumber)
+          {
+            System.out.println("Too high");
+          }
+          else
+          {
+            System.out.println("Too low");
+          }
+        }
+      else {
+        System.out.println("Invalid");
+        }
       }
     }
 
