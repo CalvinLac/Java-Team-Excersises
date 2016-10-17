@@ -41,4 +41,26 @@ public class Point {
     return eDistance;
   }
 
+  public boolean equals (Point p1) {
+    if (p1.xcoord == xcoord && p1.ycoord == ycoord) {
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+
+  public String toString () {
+    String stringXcoord = Integer.toString(xcoord);
+    String stringYcoord = Integer.toString(ycoord);
+    return "("+ stringXcoord + "," + stringYcoord+")";
+  }
+
+  public Point add (Point p1) {
+    xcoord += p1.xcoord;
+    ycoord += p1.ycoord;
+    Point newPoint = new Point(xcoord, ycoord);
+    return p1;
+  }
+
 }
