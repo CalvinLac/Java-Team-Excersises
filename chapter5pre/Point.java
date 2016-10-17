@@ -35,10 +35,10 @@ public class Point {
     ycoord = ycoord - spaces;
   }
 
-  public void distance(Point p1) {
+  public double distance(Point p1) {
     double eDistance;
     eDistance = Math.sqrt(((p1.xcoord-xcoord)*(p1.xcoord-xcoord)) + (p1.ycoord-ycoord)*(p1.ycoord-ycoord));
-    System.out.println(eDistance);
+    return eDistance;
   }
 
 }
